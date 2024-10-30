@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../css/styles1.css";
+import { Link } from "react-router-dom";
+import SignIn from "./SignIn";
 
 function Home() {
   const [sizeValue, setSize] = useState(0);
@@ -25,12 +27,16 @@ function Home() {
               <a href="#">About</a>
             </div>
 
-            <button id="sign_up" className="button">
-              Sign Up
-            </button>
-            <button id="sign_in" className="button">
-              Sign In
-            </button>
+            <Link to="/signup">
+              <button id="sign_up" className="button">
+                Sign Up
+              </button>
+            </Link>
+            <Link to="/signin">
+              <button id="sign_in" className="button">
+                Sign In
+              </button>
+            </Link>
           </div>
         </div>
 

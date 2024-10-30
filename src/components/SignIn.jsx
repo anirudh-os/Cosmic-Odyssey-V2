@@ -1,21 +1,26 @@
-import { useState } from 'react';
-import '../css/Sign_in.css';
-import signInBackground from '../assets/sign_in_background.jpg';
-import loginImage from '../assets/login_image.png';
+import { useState } from "react";
+import "../css/Sign_in.css";
+import signInBackground from "../assets/sign_in_background.jpg";
+import loginImage from "../assets/login_image.png";
+import { Link } from "react-router-dom";
 
 function SignIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+    console.log("Email:", email);
+    console.log("Password:", password);
   };
 
   return (
     <div className="background-container">
-      <img src={signInBackground} alt="Background" className="background-image" />
+      <img
+        src={signInBackground}
+        alt="Background"
+        className="background-image"
+      />
       <div className="login-container">
         <div className="login-box">
           <div className="man">
@@ -40,10 +45,12 @@ function SignIn() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit" id="login-btn">Sign In</button>
+            <button type="submit" id="login-btn">
+              Sign In
+            </button>
             <div className="links">
               <a href="#">Forgot password?</a>
-              <a href="Sign_up_page.html">New? Register here.</a>
+              <Link to="/signup">New? Register here.</Link>
             </div>
           </form>
         </div>
