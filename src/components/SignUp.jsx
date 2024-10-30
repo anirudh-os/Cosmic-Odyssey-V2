@@ -1,25 +1,30 @@
-import { useState } from 'react';
-import '../css/Sign_up.css';
-import signInBackground from '../assets/sign_in_background.jpg';
-import loginImage from '../assets/login_image.png';
+import { useState } from "react";
+import "../css/Sign_up.css";
+import signInBackground from "../assets/sign_in_background.jpg";
+import loginImage from "../assets/login_image.png";
+import { Link } from "react-router-dom";
 
 function SignUp() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('First Name:', firstName);
-    console.log('Last Name:', lastName);
-    console.log('Email:', email);
-    console.log('Password:', password);
+    console.log("First Name:", firstName);
+    console.log("Last Name:", lastName);
+    console.log("Email:", email);
+    console.log("Password:", password);
   };
 
   return (
     <div className="background-container">
-      <img src={signInBackground} alt="Background" className="background-image" />
+      <img
+        src={signInBackground}
+        alt="Background"
+        className="background-image"
+      />
       <div className="signup-container">
         <div className="signup-box">
           <div className="man">
@@ -65,10 +70,12 @@ function SignUp() {
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <button type="submit" id="signup-btn">Sign Up</button>
+            <button type="submit" id="signup-btn">
+              Sign Up
+            </button>
 
             <div className="links">
-              <a href="Sign_in_page.html">Already have an account? Sign in here.</a>
+              <Link to="/signin">Already have an account? Sign in here.</Link>
             </div>
           </form>
         </div>
