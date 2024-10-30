@@ -23,7 +23,7 @@ function Home() {
           </header>
           <div id="details">
             <div id="nav_info">
-              <a href="./webpages/contact-us.html">Contact</a>
+              <Link to="/contact">Contact</Link>
               <a href="#">About</a>
             </div>
 
