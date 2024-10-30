@@ -1,0 +1,221 @@
+/* General Reset */
+body {
+  width: 101%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #070f2b;
+  color: #fff;
+}
+
+/* Logo Section */
+#logo-header {
+  left: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  margin: 0 auto;
+  position: relative; /* Centering the logo */
+  padding-left: 100px; /* Keeps it centered */
+}
+
+#logo-header p {
+  font-size: 1.5rem;
+  color: black;
+}
+
+#logo {
+  height: 60px;
+  width: auto;
+  margin-top: 0px;
+}
+
+/* Navbar Styling */
+#navbar {
+  background-color: #6d7c9a; /* Color blending with hero */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+}
+
+/* Navbar container */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+
+/* Hamburger button to the extreme left */
+.hamburger {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+}
+
+.hamburger:hover {
+  color: #f1f1f1;
+}
+
+/* Details Section */
+#details {
+  display: flex;
+  gap: 15px;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+#details a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#details a:hover {
+  color: #f1f1f1;
+}
+
+#nav_info {
+  padding-top: 3px;
+  display: flex;
+}
+
+#nav_info :nth-child(1),
+#nav_info :nth-child(2) {
+  margin-right: 20px;
+}
+
+.button {
+  padding: 3px 9px;
+  border-radius: 8px;
+}
+
+#sign_in {
+  background-color: #1a2b4c;
+  color: azure;
+  border: 1px solid white;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  height: 100%;
+  width: 0px;
+  max-width: 175px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1a2b4c;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  font-size: 140%;
+  overflow: hidden;
+}
+
+#hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#hero-overlay {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: whitesmoke;
+}
+
+.cta-button {
+  background-color: rgb(90, 90, 225);
+  padding: 7px;
+  border-radius: 20px;
+  color: #f1f1f1;
+}
+
+/* Cards Section */
+#cards {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 500px;
+  height: 300px;
+  background-color: #1a2b4c;
+  border-radius: 10px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.card > img {
+  width: 250px;
+  height: 160px;
+  display: block;
+  padding-bottom: 5px;
+}
+
+/* Footer Section */
+#footer {
+  background-color: #6d7c9a;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
