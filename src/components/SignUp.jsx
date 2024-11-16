@@ -10,21 +10,46 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("First Name:", firstName);
-    console.log("Last Name:", lastName);
-    console.log("Email:", email);
-    console.log("Password:", password);
+
+    // Create a user object to send to the backend
+    const userData = {
+      firstName,
+      lastName,
+      email,
+      password,
+    };
+
+    try {
+      // Send the POST request to the server
+      const response = await fetch("/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      const data = await response.json();
+      
+      if (response.ok) {
+        console.log("User created:", data);
+        alert("Sign Up Successful!");
+        // Redirect to login page or home page
+      } else {
+        console.log("Error:", data);
+        alert("Sign Up Failed! Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error signing up. Please try again.");
+    }
   };
 
   return (
     <div className="background-container">
-      <img
-        src={signInBackground}
-        alt="Background"
-        className="background-image"
-      />
+      <img src={signInBackground} alt="Background" className="background-image" />
       <div className="signup-container">
         <div className="signup-box">
           <div className="man">

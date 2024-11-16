@@ -58,15 +58,16 @@ body {
 .hamburger {
   background: none;
   border: none;
-  color: #fff;
-  font-size: 24px;
+  color: cornsilk;
+  font-size: 34px;
   cursor: pointer;
   position: absolute;
-  left: 20px;
+  left: 2%;
+  top: 10%;
 }
 
 .hamburger:hover {
-  color: #f1f1f1;
+  color: #1a2b4c;
 }
 
 /* Details Section */
@@ -108,6 +109,12 @@ body {
   border: 1px solid white;
 }
 
+#sign_up {
+  background-color: #070f2b;
+  color: azure;
+  border: 1px solid white;
+}
+
 /* Sidebar Styling */
 .sidebar {
   height: 100%;
@@ -123,25 +130,35 @@ body {
 }
 
 .sidebar a {
-  padding: 8px 10px;
+  top: 20%;
+  padding: 18px 10px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: cornsilk;
   display: block;
   transition: 0.3s;
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
+  color: whitesmoke;
+  background-color: #6d7c9a;
 }
 
 .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 36px;
+  right: -1px;
+  font-size: 32px;
   margin-left: 50px;
   cursor: pointer;
+  color: #6d7c9a;
+  background-color: azure;
+}
+
+.closebtn:hover {
+  background-color: rgb(234, 41, 41);
+  box-shadow: #070f2b;
+  color: whitesmoke;
 }
 
 /* Hero Section */
@@ -175,12 +192,16 @@ body {
 .cta-button {
   background-color: rgb(90, 90, 225);
   padding: 7px;
+  text-decoration: none;
   border-radius: 20px;
   color: #f1f1f1;
 }
 
 /* Cards Section */
-#cards {
+#cards3,
+#cards6,
+#cards9,
+#cards12 {
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -188,10 +209,11 @@ body {
 
 .card {
   width: 500px;
-  height: 300px;
+  height: 330px;
   background-color: #1a2b4c;
   border-radius: 10px;
   margin: 10px;
+  text-decoration: none;
   justify-content: center;
   align-items: center;
   color: #fff;
@@ -212,10 +234,22 @@ body {
   padding-bottom: 5px;
 }
 
+.animated-cards {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-cards.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Footer Section */
 #footer {
   background-color: #6d7c9a;
   text-align: center;
   padding: 10px;
   color: #fff;
+  margin-top: auto;
 }
