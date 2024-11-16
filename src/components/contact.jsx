@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "../css/contact.css";
 
+import Contact_img from "../assets/satellite.jpg";
+
 function Contact() {
 
 
   return (
-    <div className="contact_body">
+    <div className="contact_body" style={{ backgroundImage: `url(${Contact_img})` }}>
       <div className="container">
         <h1>Contact Us</h1>
         
