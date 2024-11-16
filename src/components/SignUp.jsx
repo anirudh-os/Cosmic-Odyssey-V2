@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../css/Sign_up.css";
+import { useNavigate } from "react-router-dom";
 import signInBackground from "../assets/sign_in_background.jpg";
 import loginImage from "../assets/login_image.png";
 import { Link } from "react-router-dom";
@@ -9,6 +10,7 @@ function SignUp() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,6 +38,9 @@ function SignUp() {
       if (response.ok) {
         alert("Sign Up Successful!");
         // Redirect to login page or home page
+        setTimeout(() => {
+          navigate("/"); // Redirect after successful sign-in
+        }, 2000); // Delay for user to see success message
       } else {
         console.log("Error:", data);
         alert("Sign Up Failed! Please try again.");
