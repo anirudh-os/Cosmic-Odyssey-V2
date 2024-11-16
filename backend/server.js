@@ -36,7 +36,7 @@ app.post("/api/signup", async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
 
   // Validate the input (you can add more validation if needed)
-  if (!firstName || !lastName || !email || !password) {
+  if (!firstName || !email || !password) {
     return res.status(400).json({ message: "All fields are required" });
   }
 
