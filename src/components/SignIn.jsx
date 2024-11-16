@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/Sign_in.css";
 import signInBackground from "../assets/sign_in_background.jpg";
 import loginImage from "../assets/login_image.png";
@@ -7,11 +8,42 @@ import { Link } from "react-router-dom";
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
+
+    // Reset messages
+    setError("");
+    setSuccess("");
+
+    try {
+      // Make a POST request to the server
+      const response = await fetch("http://localhost:5000/api/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess(data.message);
+        setTimeout(() => {
+          navigate("/"); // Redirect after successful sign-in
+        }, 2000); // Delay for user to see success message
+      } else {
+        setError(data.message || "An error occurred. Please try again.");
+      }
+    } catch (err) {
+      setError("Unable to connect to the server. Please try again later.");
+      console.error("Error:", err);
+    }
   };
 
   return (
@@ -48,6 +80,8 @@ function SignIn() {
             <button type="submit" id="login-btn">
               Sign In
             </button>
+            {error && <p className="error">{error}</p>}
+            {success && <p className="success">{success}</p>}
             <div className="links">
               <a href="#">Forgot password?</a>
               <Link to="/signup">New? Register here.</Link>

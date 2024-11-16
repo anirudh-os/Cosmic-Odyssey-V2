@@ -78,3 +78,15 @@ button {
     color: orange;
     text-decoration: underline;
 }
+
+.error {
+    color: red;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+.success {
+color: green;
+font-size: 18px;
+margin-top: 10px;
+}

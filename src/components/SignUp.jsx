@@ -34,7 +34,6 @@ function SignUp() {
       const data = await response.json();
       
       if (response.ok) {
-        console.log("User created:", data);
         alert("Sign Up Successful!");
         // Redirect to login page or home page
       } else {
